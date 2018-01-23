@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style type="text/css">
+    .jumbotron {
+        background-image: url(../../Images/key-1315566-1278x655.jpg);
+    }
+</style>
+
+
+<div class="jumbotron">
+    <h1>Password Manager</h1>
+    <p class="lead">This is a simple manager for software account details</p>
+    <p><a href="http://localhost:56180/Pwds/Index" class="btn btn-primary btn-lg">Passwords &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Third Party</h2>
+        <p>
+            These are applications on a <kbd>Third Party</kbd> software developer/platform.
+            They are <span class="text-primary">housed externally </span> and take great care when storing any 
+            passwords within this application. This application is <span class="text-danger">
+            not secure</span> so ensure no important is housed here.
+</p>
+        <p><a class="btn btn-default" href="/Pwds/Category?CatName=ThirdParty">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>In House</h2>
+        <p>
+            These are applications created <kbd>In-House</kbd>. They are temporary development
+            accounts of differing access levels for development and testing purposes.
+            They are <span class="text-primary"> housed internally </span> not to be added 
+            to a production server. <span class="text-danger">Live data is not to be used 
+            within these apps.</span>
+
+        </p><a class="btn btn-default" href="/Pwds/Category?CatName=InHouse">Learn more &raquo;</a>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Personal</h2>
+        <p>
+            These are applications for <kbd>Personal use</kbd>. If they are to be used with
+            important accounts please use codes to help you remember the actual data.
+
+        </p><a class="btn btn-default" href="/Pwds/Category?CatName=Personal">Learn more &raquo;</a>
+    </div>
+</div>

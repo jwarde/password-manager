@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+
+    /*.glyphicon {
+    font-size: 30px;
+    }*/
+        
+/*.panel-heading{
+	background-image:linear-gradient(#04519b, #044687 60%, #033769);
+	color:#fff !important;
+}
+
+.comment-avatar img{
+	width:40px;
+	margin-right:5px;
+}*/
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                @Html.ActionLink("Password Manager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="../Home/Index">Home</a></li>
+                <li><a href="/Pwds/Create">New</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Pwds/Category?CatName=ThirdParty">ThirdParty</a></li>
+                        <li><a href="/Pwds/Category?CatName=InHouse">InHouse</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/Pwds/Category?CatName=Personal">Personal</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sub Category <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Pwds/SubCategory?SubCatName=Email">EMail</a></li>
+                        <li><a href="/Pwds/SubCategory?SubCatName=Website">Website</a></li>
+                        <li><a href="/Pwds/SubCategory?SubCatName=WebApp">WebApp</a></li>
+                        <li><a href="/Pwds/SubCategory?SubCatName=Blog">Blog</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/Pwds/SubCategory?SubCatName=OS">OS</a></li>
+                        <li><a href="/Pwds/SubCategory?SubCatName=DB">DB</a></li>
+                        <li><a href="/Pwds/SubCategory?SubCatName=Hardware">Hardware</a></li>
+                        <li><a href="/Pwds/SubCategory?SubCatName=Installation">Installation</a></li>
+                        
+                    </ul>
+                </li>
+
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div>
+    </nav> 
+
+
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Created by John Warde as a Developer's tool. <span class="text-danger">Please note this is secure as a post-it note</span></p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

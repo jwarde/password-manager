@@ -1,0 +1,370 @@
+﻿@model Pass.Models.Pwd
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Password Management Details</h2>
+
+<div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <blockquote>
+        <p>This is for account: <span class="text-primary">@Html.DisplayFor(model => model.Account_Name)</span></p>
+        <p>Password: <span class="text-success">@Html.DisplayFor(model => model.Password_1)</span></p>
+
+
+        @if (Model.URI == "")
+        {
+            <p class="text-primary">at this URL: @Html.DisplayFor(model => model.URI)</p>
+        }
+        else
+        {
+            <p class="text-danger">No URI for this account.</p>
+        }
+
+    </blockquote>
+
+
+    <hr />
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PwdId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Main Account Details</a></li>
+        <li><a data-toggle="tab" href="#menu1">Account Details</a></li>
+        <li><a data-toggle="tab" href="#menu2">Contact Details</a></li>
+        <li><a data-toggle="tab" href="#menu3">Address Details</a></li>
+        <li><a data-toggle="tab" href="#menu4">Security Details</a></li>
+        <li><a data-toggle="tab" href="#menu5">Notes</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3 class="text-danger">Account Details Main <span class="glyphicon glyphicon-th"></span></h3>
+            <p>These are the main account details for catagorisation.</p>  
+
+            <dl class="dl-horizontal">
+                <dt class="text-primary">
+                    Date Created
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.DateCreated)
+                </dd>
+
+                @*<dt>
+                @Html.DisplayNameFor(model => model.DateTimeStamp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateTimeStamp)
+            </dd>*@
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Completed)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Completed)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.SubCategory)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.SubCategory)
+                </dd>
+
+            </dl>
+</div>
+        <div id="menu1" class="tab-pane fade">
+            <h3 class="text-danger">Account Details  <span class="glyphicon glyphicon-star"></span></h3>
+            <p>These are the initial account details.</p>
+
+            <dl class="dl-horizontal">
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Account_Name)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Account_Name)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.URI)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.URI)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Location)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Location)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Password_1)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Password_1)
+                </dd>
+
+            </dl>
+</div>
+        <div id="menu2" class="tab-pane fade">
+            <h3 class="text-danger">Contact Details  <span class="glyphicon glyphicon-earphone"></span></h3>
+            <p>These are the contact details.</p>
+
+            <dl class="dl-horizontal">
+
+                <dt class="text-primary">
+                    First Name
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Account_Holder_First_Name)
+                </dd>
+
+                <dt class="text-primary">
+                    Last Name
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Account_Holder_Last_Name)
+                </dd>
+
+            </dl>
+</div>
+        <div id="menu3" class="tab-pane fade">
+            <h3 class="text-danger">Address Details  <span class="glyphicon glyphicon-tower"></span></h3>
+            <p>These are the address details.</p>
+
+            <dl class="dl-horizontal">
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Email_Address_Main)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Email_Address_Main)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.DOB)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.DOB)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Tel)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Tel)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Mobile)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Address_1)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Address_1)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Address_2)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Address_2)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Town)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Town)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Region)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Region)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Country)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Country)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Post_Code_Zip)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Post_Code_Zip)
+                </dd>
+
+            </dl>
+</div>
+        <div id="menu4" class="tab-pane fade">
+            <h3 class="text-danger">Security Details  <span class="glyphicon glyphicon-flag"></span></h3>
+            <p>These are the security details.</p>
+
+            <dl class="dl-horizontal">
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Question_1)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Question_1)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Answer_1)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Answer_1)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Question_2)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Question_2)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Answer_2)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Answer_2)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Question_3)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Question_3)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Answer_3)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Answer_3)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Question_4)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Question_4)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Answer_4)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Answer_4)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Question_5)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Question_5)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Answer_5)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Answer_5)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Mother_Maiden_Name)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Mother_Maiden_Name)
+                </dd>
+
+            </dl>
+        </div>
+        <div id="menu5" class="tab-pane fade">
+            <h3 class="text-danger">Notes  <span class="glyphicon glyphicon-pencil"></span></h3>
+            <p>These are the additional notes for the account i.e. config setting etc.</p>
+
+            <dl class="dl-horizontal">
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Notes)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Notes)
+                </dd>
+
+                <dt class="text-primary">
+                    @Html.DisplayNameFor(model => model.Misc)
+                </dt>
+
+                <dd class="text-success">
+                    @Html.DisplayFor(model => model.Misc)
+                </dd>
+
+            </dl>
+        </div>
+
+    </div>
+
+
+    
+</div>
+

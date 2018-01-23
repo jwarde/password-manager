@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Pass.Models.Pwd>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Accounts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create"),  There are @Model.Count() User Accounts registered 
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Account Name:</strong> @item.Account_Name </h3>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Account Name:</strong> @item.Account_Name
+                            </div>
+                            <div class="col-sm-4">
+                                <strong>Password:</strong> @item.Password_1
+                            </div>
+                            <div class="col-sm-4">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.PwdId }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.PwdId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.PwdId })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <strong>URI:</strong> @item.URI
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+}
